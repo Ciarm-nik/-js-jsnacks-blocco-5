@@ -46,6 +46,8 @@ var zucchina = [{
 
 // Creo un ciclo for per il calcolo totale del peso delle zucchine
 var pesoZucchina = 0;
+
+
 for (var i = 0; i < zucchina.length; i++) {
     pesoZucchina += zucchina[i].peso;
 }
@@ -58,7 +60,7 @@ console.log("Il totale del peso delle zucchine è: " + pesoZucchina, " kg")
 // Dividi in due array separati le zucchine che misurano meno o più di 15cm.
 // Infine stampa separatamente quanto pesano i due gruppi di zucchine
 
-var zucchina = [{
+var zucchine = [{
     "varietà": "a",
     "peso": 5,
     "lunghezza": 12
@@ -102,5 +104,39 @@ var zucchina = [{
 ]
 
 
-zucchineSmall = [];
-zucchineLarge = [];
+var zucchineSmall = [];
+var zucchineLarge = [];
+
+var sommaZuccLarge = 0;
+var sommaZuccSmall = 0;
+
+for (var i = 0; i < zucchine.length; i++) {
+    var zucchina = zucchine[i];
+
+    if (zucchina.lunghezza > 15) {
+        zucchineLarge.push(zucchina);
+        sommaZuccLarge += zucchina.peso;
+    } else {
+        zucchineSmall.push(zucchina)
+        sommaZuccSmall += zucchina.peso;
+    }
+}
+
+console.log("Le zucchine grandi (> 15) sono " + zucchineLarge.length + " e pesano " + sommaZuccLarge);
+console.log("Le zucchine piccole (< 15) sono " + zucchineSmall.length + " e pesano " + sommaZuccSmall);
+
+
+
+
+// Funzione per sommare un array di oggetti
+
+// function sommaProprieta(listaOggetti, chiaveOggettoDaSommare) {
+//     var somma = 0
+//     for (var i = 0; i < listaOggetti.length; i++) {
+//         var oggetto = listaOggetti[i]
+
+//         somma += oggetto[chiaveOggettoDaSommare];
+//     }
+
+//     return somma;
+// }
