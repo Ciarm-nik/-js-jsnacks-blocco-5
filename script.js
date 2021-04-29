@@ -2,57 +2,80 @@
 // Crea 10 oggetti che rappresentano una zucchina, indicandone per ognuno varietà, peso e lunghezza. Calcola quanto pesano tutte le zucchine.
 
 var zucchina = [{
-    "varietà": "a",
-    "peso": 5,
-    "lunghezza": 12
+    varieta: "a",
+    peso: 5,
+    lunghezza: 12
 }, {
-    "varietà": "b",
-    "peso": 2,
-    "lunghezza": 3
+    varieta: "b",
+    peso: 2,
+    lunghezza: 3
 }, {
-    "varietà": "c",
-    "peso": 4,
-    "lunghezza": 15
+    varieta: "c",
+    peso: 4,
+    lunghezza: 15
 }, {
-    "varietà": "d",
-    "peso": 3,
-    "lunghezza": 22
+    varieta: "d",
+    peso: 3,
+    lunghezza: 22
 }, {
-    "varietà": "e",
-    "peso": 3,
-    "lunghezza": 15
+    varieta: "e",
+    peso: 3,
+    lunghezza: 15
 }, {
-    "varietà": "f",
-    "peso": 3,
-    "lunghezza": 12
+    varieta: "f",
+    peso: 3,
+    lunghezza: 12
 }, {
-    "varietà": "g",
-    "peso": 6,
-    "lunghezza": 11
+    varieta: "g",
+    peso: 6,
+    lunghezza: 11
 }, {
-    "varietà": "h",
-    "peso": 2,
-    "lunghezza": 16
+    varieta: "h",
+    peso: 2,
+    lunghezza: 16
 }, {
-    "varietà": "i",
-    "peso": 2,
-    "lunghezza": 15
+    varieta: "i",
+    peso: 2,
+    lunghezza: 15
 }, {
-    "varietà": "l",
-    "peso": 2,
-    "lunghezza": 12
+    varieta: "l",
+    peso: 2,
+    lunghezza: 12
 },
 ]
 
+var somma = sommaProprieta(zucchina, "peso");
+
+
 // Creo un ciclo for per il calcolo totale del peso delle zucchine
-var pesoZucchina = 0;
+// var pesoZucchina = 0;
 
 
-for (var i = 0; i < zucchina.length; i++) {
-    pesoZucchina += zucchina[i].peso;
-}
+// for (var i = 0; i < zucchina.length; i++) {
+//     pesoZucchina += zucchina[i].peso;
+// }
 // Stampo in console il peso totale
-console.log("Il totale del peso delle zucchine è: " + pesoZucchina, " kg")
+console.log("Il totale del peso delle zucchine è: " + somma + " kg")
+
+
+
+//  Funzione per sommare un array di oggetti
+
+function sommaProprieta(listaOggetti, chiaveOggettoDaSommare) {
+    var somma = 0
+
+    for (var i = 0; i < listaOggetti.length; i++) {
+        somma += listaOggetti[i][chiaveOggettoDaSommare];
+    }
+
+    return somma
+}
+
+
+// Utilizzo la funzione per il primo esercizio. Sostituisco a somma = 0 la seguente funzione....
+// Posso anche sostituire a peso la lunghezza e di conseguenza sommare tutte le lunghezza
+
+
 
 
 // [Snack 2]
@@ -128,15 +151,3 @@ console.log("Le zucchine piccole (< 15) sono " + zucchineSmall.length + " e pesa
 
 
 
-// Funzione per sommare un array di oggetti
-
-// function sommaProprieta(listaOggetti, chiaveOggettoDaSommare) {
-//     var somma = 0
-//     for (var i = 0; i < listaOggetti.length; i++) {
-//         var oggetto = listaOggetti[i]
-
-//         somma += oggetto[chiaveOggettoDaSommare];
-//     }
-
-//     return somma;
-// }
